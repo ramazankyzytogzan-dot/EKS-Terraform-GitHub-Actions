@@ -18,10 +18,11 @@ pipeline {
             }
         }
         stage('Git Pulling') {
-            steps {
-                git branch: 'master', url: 'https://github.com/AmanPathak-DevOps/EKS-Terraform-GitHub-Actions.git'
-            }
-        }
+    steps {
+        // Теперь Jenkins берет код отсюда:
+        git branch: 'master', url: 'https://github.com/ramazankyzytogzan-dot/EKS-Terraform-GitHub-Actions.git'
+    }
+}
         stage('Init') {
             steps {
                 withAWS(credentials: 'aws-creds', region: 'us-east-1') {
